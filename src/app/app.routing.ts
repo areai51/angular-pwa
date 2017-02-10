@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';  
 import { Routes, RouterModule } from '@angular/router';  
+import { CommonModule } from '@angular/common';  
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductListingComponent } from './product-listing/product-listing.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+
 
 const routes: Routes = [  
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -12,8 +14,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
+  declarations: [HomePageComponent,ProductListingComponent,
+    ProductDetailsComponent
+],
   exports: [RouterModule],
+
 })
 export class AppRoutingModule { }
 
